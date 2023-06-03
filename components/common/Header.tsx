@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../styles/header.module.scss'
+import styles from '../../styles/header.module.scss'
 import Image from 'next/image'
 
 interface Props {
@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Header = (props: Props) => {
-  console.log(props)
   return (
     <header className={styles.header}>
       <div className={styles.flexItem}>
