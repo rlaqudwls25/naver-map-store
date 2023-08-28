@@ -5,8 +5,17 @@ import styles from '../styles/header.module.scss'
 import { AiOutlineShareAlt } from 'react-icons/ai'
 import { VscFeedback } from 'react-icons/vsc'
 import MapSection from '@/components/home/MapSection'
+import { StoreInfo } from '@/types/store'
+import { queryKeys, useInitStores } from '@/hooks/useStore'
+import { useQuery } from '@tanstack/react-query'
 
-const Home = () => {
+interface Props {
+  stores: StoreInfo[]
+}
+
+const Home = ({ stores }: Props) => {
+  const { data } = useInitStores(stores)
+
   return (
     <Fragment>
       <Header
@@ -32,3 +41,13 @@ const Home = () => {
 }
 
 export default Home
+
+export const getStaticProps = async () => {
+  // 나중에 next api routes로 불러오기로 리팩토링 예정
+  const stores = (await import('../public/stores.json')).default
+
+  return {
+    props: { stores },
+    revalidate: 60 * 60,
+  }
+}
