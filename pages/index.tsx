@@ -1,12 +1,12 @@
 import Header from '@/components/common/Header'
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Link from 'next/link'
 import styles from '../styles/header.module.scss'
 import { AiOutlineShareAlt } from 'react-icons/ai'
 import { VscFeedback } from 'react-icons/vsc'
 import MapSection from '@/components/home/MapSection'
 import { StoreInfo } from '@/types/store'
-import { queryKeys, useInitStores } from '@/hooks/useStore'
+import { queryKeys } from '@/hooks/useStore'
 import { useQuery } from '@tanstack/react-query'
 
 interface Props {
@@ -14,8 +14,7 @@ interface Props {
 }
 
 const Home = ({ stores }: Props) => {
-  const { data } = useInitStores(stores)
-
+  const { data } = useQuery([queryKeys.STORE_LIST], () => stores)
   return (
     <Fragment>
       <Header

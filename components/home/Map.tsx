@@ -3,27 +3,25 @@ import React, { useEffect, useRef } from 'react'
 import { NaverMapType } from '@/types/map'
 import { INITIAL_CENTER, INITIAL_ZOOM } from '@/hooks/useMap'
 import { Coordinates } from '@/types/store'
+import { queryKeys } from '@/hooks/useStore'
+import { useQuery } from '@tanstack/react-query'
+import { useRecoilState } from 'recoil'
+import { mapState } from '@/recoil/atom/map'
 
 interface IMapProps {
   mapId?: string
-  onLoad: (map: NaverMapType) => void
   initialCenter?: Coordinates
   initialZoom?: number
 }
 
 const Map = ({
-  onLoad,
   mapId = 'map',
   initialCenter = INITIAL_CENTER,
   initialZoom = INITIAL_ZOOM,
 }: IMapProps) => {
   const mapRef = useRef<NaverMapType | null>(null)
 
-  useEffect(() => {
-    return () => {
-      mapRef.current?.destroy()
-    }
-  }, [])
+  const [mapInfo, setMapInfo] = useRecoilState(mapState)
 
   const initializeMap = () => {
     const mapOptions = {
@@ -37,15 +35,17 @@ const Map = ({
       },
     }
 
-    const map = new window.naver.maps.Map(mapId, mapOptions)
+    let map = new window.naver.maps.Map(mapId, mapOptions)
     mapRef.current = map
 
-    console.log('mapRef', mapRef)
-
-    if (onLoad) {
-      onLoad(map)
-    }
+    setMapInfo(map)
   }
+
+  useEffect(() => {
+    return () => {
+      mapRef.current?.destroy()
+    }
+  }, [])
   return (
     <>
       <Script

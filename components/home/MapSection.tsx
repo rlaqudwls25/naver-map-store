@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Map from './Map'
+import Markers from './Markers'
 
 const MapSection = () => {
   return (
-    <Map
-      onLoad={() => {
-        console.log('load')
-      }}
-    />
+    <Fragment>
+      <Map />
+      <Markers />
+    </Fragment>
   )
 }
 
