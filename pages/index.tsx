@@ -6,15 +6,19 @@ import { AiOutlineShareAlt } from 'react-icons/ai'
 import { VscFeedback } from 'react-icons/vsc'
 import MapSection from '@/components/home/MapSection'
 import { StoreInfo } from '@/types/store'
-import { queryKeys } from '@/hooks/useStore'
-import { useQuery } from '@tanstack/react-query'
+import useStores from '@/hooks/useStore'
 
 interface Props {
   stores: StoreInfo[]
 }
 
 const Home = ({ stores }: Props) => {
-  const { data } = useQuery([queryKeys.STORE_LIST], () => stores)
+  const { initializeStores } = useStores()
+
+  useEffect(() => {
+    initializeStores(stores)
+  }, [stores])
+
   return (
     <Fragment>
       <Header

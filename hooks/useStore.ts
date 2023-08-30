@@ -1,7 +1,16 @@
 import { StoreInfo } from '@/types/store'
-import { useQuery } from '@tanstack/react-query'
+import { mutate } from 'swr'
 
-export const queryKeys = {
-  STORE_LIST: 'store_list',
-  MAP: 'map',
+export const STORE_KEY = 'store_key'
+
+const useStores = () => {
+  const initializeStores = (stores: StoreInfo[]) => {
+    mutate(STORE_KEY, stores)
+  }
+
+  return {
+    initializeStores,
+  }
 }
+
+export default useStores

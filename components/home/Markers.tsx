@@ -1,34 +1,29 @@
-import { queryKeys } from '@/hooks/useStore'
+import { STORE_KEY } from '@/hooks/useStore'
 import { StoreInfo } from '@/types/store'
-import { useQueryClient } from '@tanstack/react-query'
+import useSWR from 'swr'
 import React, { Fragment } from 'react'
 import Marker from './Marker'
 import { NaverMapType } from '@/types/map'
-import { useRecoilValue } from 'recoil'
-import { mapState } from '@/recoil/atom/map'
+import { MAP_KEY } from '@/hooks/useMap'
+import { generateStoreMarkerIcon } from '@/utils/generateMarker'
 
 const Markers = () => {
-  const mapInfo = useRecoilValue(mapState)
-
-  const queryClient = useQueryClient()
-
-  const storeList = queryClient.getQueryData<StoreInfo[]>([
-    queryKeys.STORE_LIST,
-  ])
-
-  if (!mapInfo || !storeList) return null
+  const { data: storeList } = useSWR<StoreInfo[]>(STORE_KEY)
+  const { data: mapInfo } = useSWR<NaverMapType>(MAP_KEY)
 
   return (
     <Fragment>
-      {storeList?.map((store) => {
-        return (
-          <Marker
-            map={mapInfo}
-            coordinates={store.coordinates as any}
-            key={store.nid}
-          />
-        )
-      })}
+      {mapInfo &&
+        storeList?.map((store) => {
+          return (
+            <Marker
+              map={mapInfo}
+              coordinates={store.coordinates}
+              key={store.nid}
+              icon={generateStoreMarkerIcon(store.season)}
+            />
+          )
+        })}
     </Fragment>
   )
 }

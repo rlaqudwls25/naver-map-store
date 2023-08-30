@@ -19,7 +19,7 @@
   },
   {
     "nid": 1126233571,
-    "season": 1,
+    "season": 2,
     "episode": 3,
     "characteristic": "로봇치킨",
     "name": "롸버트치킨 강남1호기",
@@ -43,7 +43,7 @@
   },
   {
     "nid": 18708805,
-    "season": 1,
+    "season": 3,
     "episode": 3,
     "characteristic": "초코치킨",
     "name": "동네아저씨치킨",
@@ -72,7 +72,7 @@
   },
   {
     "nid": 1537515621,
-    "season": 1,
+    "season": 4,
     "episode": 4,
     "characteristic": "고대페르시아운동",
     "name": "소마앤바디 힘의집",
@@ -90,7 +90,7 @@
   },
   {
     "nid": 1961880965,
-    "season": 1,
+    "season": 5,
     "episode": 4,
     "characteristic": "점핑운동",
     "name": "인천점핑운동전문센터",
@@ -108,7 +108,7 @@
   },
   {
     "nid": 1824986140,
-    "season": 1,
+    "season": 6,
     "episode": 5,
     "characteristic": "한그릇10만원찜뽕",
     "name": "24시 대기만성",
@@ -142,8 +142,8 @@
   },
   {
     "nid": 1172909556,
-    "season": 1,
-    "episode": 5,
+    "season": 7,
+    "episode": 7,
     "characteristic": "40cm산더미물갈비",
     "name": "산홍 오산평택점",
     "coordinates": [37.134443, 127.0309258],
@@ -171,7 +171,7 @@
   },
   {
     "nid": 1476690926,
-    "season": 1,
+    "season": 8,
     "episode": 7,
     "characteristic": "변사와함께하는중식당",
     "name": "몽중식",
@@ -193,7 +193,7 @@
   },
   {
     "nid": 1729088578,
-    "season": 1,
+    "season": 9,
     "episode": 7,
     "characteristic": "커피코스요리",
     "name": "펠른",
@@ -217,7 +217,7 @@
   },
   {
     "nid": 32209635,
-    "season": 1,
+    "season": 10,
     "episode": 8,
     "characteristic": "수족관식당",
     "name": "임진강수라상",
@@ -243,7 +243,7 @@
   },
   {
     "nid": 33860470,
-    "season": 1,
+    "season": 11,
     "episode": 8,
     "characteristic": "기찻길도보3초",
     "name": "교외선 우리집",
