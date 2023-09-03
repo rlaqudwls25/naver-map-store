@@ -7,10 +7,14 @@ import { NaverMapType } from '@/types/map'
 import { MAP_KEY } from '@/hooks/useMap'
 import { generateStoreMarkerIcon } from '@/utils/generateMarker'
 import useCurrentStore, { CURRENT_STORE_KEY } from '@/hooks/useCurrentStore'
+import { useRecoilValue } from 'recoil'
+import { mapState } from '@/recoil/atom/store'
 
 const Markers = () => {
   const { data: storeList } = useSWR<StoreInfo[]>(STORE_KEY)
   const { data: mapInfo } = useSWR<NaverMapType>(MAP_KEY)
+  // const mapInfo = useRecoilValue<NaverMapType | null>(mapState)
+
   const { data: targetStoreInfo } = useSWR<StoreInfo>(CURRENT_STORE_KEY)
 
   const { targetStore, clearStore } = useCurrentStore()
