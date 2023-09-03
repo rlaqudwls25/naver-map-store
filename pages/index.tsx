@@ -7,6 +7,7 @@ import { VscFeedback } from 'react-icons/vsc'
 import MapSection from '@/components/home/MapSection'
 import { StoreInfo } from '@/types/store'
 import useStores from '@/hooks/useStore'
+import HomeHeader from '@/components/home/HomeHeader'
 
 interface Props {
   stores: StoreInfo[]
@@ -21,21 +22,7 @@ const Home = ({ stores }: Props) => {
 
   return (
     <Fragment>
-      <Header
-        isElemnet={[
-          <button
-            className={styles.box}
-            onClick={() => alert('복사')}
-            key="button"
-          >
-            <AiOutlineShareAlt size={20} />
-          </button>,
-          <Link className={styles.box} href="/feedback" key="link">
-            <VscFeedback size={20} />
-          </Link>,
-        ]}
-      />
-
+      <HomeHeader />
       <main style={{ width: '100%', height: '100%' }}>
         <MapSection />
       </main>

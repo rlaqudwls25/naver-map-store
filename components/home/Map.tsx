@@ -3,13 +3,13 @@ import React, { useEffect, useRef } from 'react'
 import { NaverMapType } from '@/types/map'
 import { INITIAL_CENTER, INITIAL_ZOOM } from '@/hooks/useMap'
 import { Coordinates } from '@/types/store'
-import { useRecoilState } from 'recoil'
-import { mapState } from '@/recoil/atom/store'
+// import { useRecoilState } from 'recoil'
+// import { mapState } from '@/recoil/atom/store'
 
 interface IMapProps {
   mapId?: string
-  initialCenter?: Coordinates
-  initialZoom?: number
+  initialCenter: Coordinates
+  initialZoom: number
   onLoad: (map: NaverMapType) => void
   // handleClearStore: (map: NaverMapType) => void
 }
@@ -20,14 +20,13 @@ const Map = ({
   initialZoom = INITIAL_ZOOM,
   onLoad,
 }: IMapProps) => {
-  const [initMap, setInitMap] = useRecoilState(mapState)
+  // const [initMap, setInitMap] = useRecoilState(mapState)
   const mapRef = useRef<NaverMapType | null>(null)
 
   const initializeMap = () => {
     const mapOptions = {
       center: new window.naver.maps.LatLng(...initialCenter),
       zoom: initialZoom,
-      minZoom: 9,
       scaleContorl: false,
       mapDataControl: false,
       logoControlOptions: {
@@ -38,7 +37,9 @@ const Map = ({
     let map = new window.naver.maps.Map(mapId, mapOptions)
     mapRef.current = map
 
-    setInitMap(map)
+    if (onLoad) {
+      onLoad(map)
+    }
 
     // handleClearStore(map)
   }
