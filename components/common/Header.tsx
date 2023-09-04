@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '../../styles/header.module.scss'
-import Image from 'next/image'
+import { IoMdHome } from 'react-icons/io'
 
 interface Props {
   onClickLogo: () => void
@@ -13,12 +13,7 @@ const Header = (props: Props) => {
     <header className={styles.header}>
       <div className={styles.flexItem}>
         <Link href="/" className={styles.box} onClick={props.onClickLogo}>
-          <Image
-            src="https://lecture-1.vercel.app/inflearn.png"
-            alt="로고"
-            width={110}
-            height={20}
-          />
+          <IoMdHome size={20} />
         </Link>
       </div>
       {props.isElemnet && (

@@ -8,6 +8,7 @@ import MapSection from '@/components/home/MapSection'
 import { StoreInfo } from '@/types/store'
 import useStores from '@/hooks/useStore'
 import HomeHeader from '@/components/home/HomeHeader'
+import DetailSection from '@/components/home/DetailSection'
 
 interface Props {
   stores: StoreInfo[]
@@ -23,8 +24,9 @@ const Home = ({ stores }: Props) => {
   return (
     <Fragment>
       <HomeHeader />
-      <main style={{ width: '100%', height: '100%' }}>
+      <main style={{ position: 'relative', width: '100%', height: '100%' }}>
         <MapSection />
+        <DetailSection />
       </main>
     </Fragment>
   )
