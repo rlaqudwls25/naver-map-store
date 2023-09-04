@@ -4,11 +4,11 @@ import Link from 'next/link'
 import styles from '../styles/header.module.scss'
 import { AiOutlineShareAlt } from 'react-icons/ai'
 import { VscFeedback } from 'react-icons/vsc'
-import MapSection from '@/components/home/MapSection'
+import MapSection from '@/components/map/MapSection'
 import { StoreInfo } from '@/types/store'
 import useStores from '@/hooks/useStore'
 import HomeHeader from '@/components/home/HomeHeader'
-import DetailSection from '@/components/home/DetailSection'
+import DetailSection from '@/components/detail/DetailSection'
 
 interface Props {
   stores: StoreInfo[]

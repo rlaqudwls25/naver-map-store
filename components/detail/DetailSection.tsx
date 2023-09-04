@@ -3,13 +3,12 @@ import { IoIosArrowUp } from 'react-icons/io'
 import styles from '../../styles/detail.module.scss'
 import useSWR from 'swr'
 import { CURRENT_STORE_KEY } from '@/hooks/useCurrentStore'
+import DetailContents from './DetailContents'
 
 const DetailSection = () => {
   const { data: targetStore } = useSWR(CURRENT_STORE_KEY)
 
   const [toggle, setToggle] = useState(false)
-
-  console.log(targetStore)
 
   const onToggleArrowButton = () => {
     setToggle((prev) => !prev)
@@ -38,6 +37,7 @@ const DetailSection = () => {
           <p className={styles.detailTitle}>{targetStore.name}</p>
         )}
       </div>
+      <DetailContents targetStore={targetStore} toggle={toggle} />
     </div>
   )
 }

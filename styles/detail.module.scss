@@ -9,6 +9,7 @@ $section-padding-top: 8px;
   height: 100%;
   z-index: 101;
   background-color: white;
+  color: #444444;
 
   padding: $section-padding-top 16px 16px;
   border-top-left-radius: 24px;
@@ -70,5 +71,78 @@ $section-padding-top: 8px;
       font-size: 1rem;
       font-weight: 500;
     }
+  }
+}
+
+.detailContentsContainer {
+  .storeImageBox {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 120px));
+    gap: 12px;
+    margin-bottom: 16px;
+
+    .imageBox {
+      position: relative;
+      width: 120px;
+      height: 80px;
+
+      .image {
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .description {
+    margin: 15px 0px;
+  }
+
+  .info {
+    .addressBox,
+    .phoneBox {
+      display: flex;
+      align-items: center;
+      margin: 4px 0px;
+
+      svg {
+        margin-right: 4px;
+      }
+    }
+
+    .detailInfoBox {
+      margin: 4px 0px;
+    }
+  }
+
+  .menu {
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0px;
+
+      .menuName {
+      }
+
+      .menuPrice {
+      }
+    }
+  }
+
+  .hr {
+    height: 1px;
+    margin: 15px 0px;
+    border: 0;
+    background-color: lightgrey;
   }
 }

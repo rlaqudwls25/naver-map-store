@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Map from './Map'
-import Markers from './Markers'
+import Markers from '../marker/Markers'
 import useMap, { INITIAL_CENTER, INITIAL_ZOOM } from '@/hooks/useMap'
 import { NaverMapType } from '@/types/map'
 import useCurrentStore from '@/hooks/useCurrentStore'
