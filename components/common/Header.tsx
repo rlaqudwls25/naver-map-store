@@ -4,7 +4,7 @@ import styles from '../../styles/header.module.scss'
 import { IoMdHome } from 'react-icons/io'
 
 interface Props {
-  onClickLogo: () => void
+  onClickLogo?: () => void
   isElemnet?: React.ReactElement[]
 }
 

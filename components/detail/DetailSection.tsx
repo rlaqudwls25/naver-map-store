@@ -4,6 +4,7 @@ import styles from '../../styles/detail.module.scss'
 import useSWR from 'swr'
 import { CURRENT_STORE_KEY } from '@/hooks/useCurrentStore'
 import DetailContents from './DetailContents'
+import DetailHeader from './DetailHeader'
 
 const DetailSection = () => {
   const { data: targetStore } = useSWR(CURRENT_STORE_KEY)
@@ -20,23 +21,11 @@ const DetailSection = () => {
         targetStore ? styles.selected : ''
       } ${toggle ? styles.toggle : ''}`}
     >
-      <div className={styles.detailHeader}>
-        <button
-          className={`${styles.arrowButton} ${toggle ? styles.toggle : ''} ${
-            targetStore ? '' : styles.disabled
-          }`}
-          onClick={onToggleArrowButton}
-          disabled={!targetStore}
-        >
-          <IoIosArrowUp size={20} color="#666666" />
-        </button>
-        {!targetStore && (
-          <p className={styles.detailTitle}>매장을 선택해주세요</p>
-        )}
-        {targetStore && (
-          <p className={styles.detailTitle}>{targetStore.name}</p>
-        )}
-      </div>
+      <DetailHeader
+        targetStore={targetStore}
+        toggle={toggle}
+        onToggleArrowButton={onToggleArrowButton}
+      />
       <DetailContents targetStore={targetStore} toggle={toggle} />
     </div>
   )

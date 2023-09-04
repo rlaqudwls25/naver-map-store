@@ -1,15 +1,10 @@
-import { StoreInfo } from '@/types/store'
+import { IDetailProps, StoreInfo } from '@/types/store'
 import Image from 'next/image'
 import React from 'react'
 import styles from '../../styles/detail.module.scss'
 import { IoCallOutline, IoLocationOutline } from 'react-icons/io5'
 import { BsTelephone } from 'react-icons/bs'
 import Link from 'next/link'
-
-interface IDetailProps {
-  targetStore: StoreInfo
-  toggle: boolean
-}
 
 const DetailContents = ({ targetStore, toggle }: IDetailProps) => {
   if (!targetStore) return null

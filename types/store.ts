@@ -21,3 +21,9 @@ export interface StoreInfo {
   description: string
   menus: Menu[]
 }
+
+export interface IDetailProps {
+  targetStore: StoreInfo
+  toggle?: boolean
+  onToggleArrowButton?: () => void
+}
