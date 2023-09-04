@@ -26,4 +26,5 @@ export interface IDetailProps {
   targetStore: StoreInfo
   toggle?: boolean
   onToggleArrowButton?: () => void
+  copyUrl?: () => void
 }

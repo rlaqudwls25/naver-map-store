@@ -23,15 +23,6 @@ const Markers = () => {
 
   return (
     <Fragment>
-      {targetStoreInfo && (
-        <Marker
-          map={mapInfo}
-          coordinates={targetStoreInfo.coordinates}
-          icon={generateStoreMarkerIcon(targetStoreInfo.season, true)}
-          key={targetStoreInfo.nid}
-          onClick={clearStore}
-        />
-      )}
       {storeList?.map((store) => {
         return (
           <Marker
@@ -43,6 +34,16 @@ const Markers = () => {
           />
         )
       })}
+
+      {targetStoreInfo && (
+        <Marker
+          map={mapInfo}
+          coordinates={targetStoreInfo.coordinates}
+          icon={generateStoreMarkerIcon(targetStoreInfo.season, true)}
+          key={targetStoreInfo.nid}
+          onClick={clearStore}
+        />
+      )}
     </Fragment>
   )
 }

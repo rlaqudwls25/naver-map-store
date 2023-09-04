@@ -4,15 +4,40 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import styles from '../styles/detail.module.scss'
 import { StoreInfo } from '@/types/store'
+import { useRouter } from 'next/router'
+import copy from 'copy-to-clipboard'
+import useCurrentStore from '@/hooks/useCurrentStore'
 
 interface Props {
   targetStoreInfo: StoreInfo
 }
 
 const StoreDetail: NextPage<Props> = ({ targetStoreInfo }) => {
+  const router = useRouter()
+
+  const { query } = router
+  const { name } = query
+  const { targetStore } = useCurrentStore()
+
+  const copyUrl = () => {
+    copy(location.origin + '/' + name)
+  }
+
+  const goToMap = () => {
+    targetStore(targetStoreInfo)
+    router.push(
+      `/?zoom=15&lat=${targetStoreInfo.coordinates[0]}&lng=${targetStoreInfo.coordinates[1]}`
+    )
+  }
+
   return (
     <div className={`${styles.detailContainer} ${styles.toggle}`}>
-      <DetailHeader targetStore={targetStoreInfo} toggle={true} />
+      <DetailHeader
+        targetStore={targetStoreInfo}
+        toggle={true}
+        copyUrl={copyUrl}
+        onToggleArrowButton={goToMap}
+      />
       <DetailContents targetStore={targetStoreInfo} toggle={true} />
     </div>
   )
