@@ -18,6 +18,7 @@ const DetailContents = ({ targetStore, toggle }: IDetailProps) => {
               src={image}
               alt="매장 사진"
               fill
+              sizes="160px"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0WhFsDwADzwF2mLYSJgAAAABJRU5ErkJggg=="
               className={styles.image}
