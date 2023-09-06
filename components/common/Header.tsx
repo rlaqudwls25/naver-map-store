@@ -12,7 +12,12 @@ const Header = (props: Props) => {
   return (
     <header className={styles.header}>
       <div className={styles.flexItem}>
-        <Link href="/" className={styles.box} onClick={props.onClickLogo}>
+        <Link
+          href="/"
+          className={styles.box}
+          onClick={props.onClickLogo}
+          aria-label="홈으로 가기"
+        >
           <IoMdHome size={20} />
         </Link>
       </div>

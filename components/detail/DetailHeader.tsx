@@ -18,6 +18,7 @@ const DetailHeader = ({
         }`}
         onClick={onToggleArrowButton}
         disabled={!targetStore}
+        aria-label={`${toggle ? '매장 상세 열기' : '매장 상세 닫기'}`}
       >
         <IoIosArrowUp size={20} color="#666666" />
       </button>
@@ -27,7 +28,11 @@ const DetailHeader = ({
       {targetStore && (
         <div className={styles.detailTitleBox}>
           <p className={styles.detailTitle}>{targetStore.name}</p>
-          <button className={styles.detailShareButton} onClick={copyUrl}>
+          <button
+            className={styles.detailShareButton}
+            onClick={copyUrl}
+            aria-label="매장 상세 URL 공유"
+          >
             <AiOutlineShareAlt size={20} />
           </button>
         </div>

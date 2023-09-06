@@ -26,10 +26,20 @@ const HomeHeader = () => {
     <Header
       onClickLogo={resetMapOptions}
       isElemnet={[
-        <button className={styles.box} onClick={replaceAndCopyUrl} key="button">
+        <button
+          className={styles.box}
+          onClick={replaceAndCopyUrl}
+          key="button"
+          aria-label="네이버 지도 URL 공유"
+        >
           <AiOutlineShareAlt size={20} />
         </button>,
-        <Link className={styles.box} href="/feedback" key="link">
+        <Link
+          className={styles.box}
+          href="/feedback"
+          key="link"
+          aria-label="피드백 페이지로 가기"
+        >
           <VscFeedback size={20} />
         </Link>,
       ]}
