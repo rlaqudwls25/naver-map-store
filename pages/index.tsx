@@ -19,7 +19,11 @@ const Home = ({ stores }: Props) => {
 
   return (
     <Fragment>
-      <NextSeo title="네이버" description="매장 지도 서비스" />
+      <NextSeo
+        title="네이버"
+        description="매장 지도 서비스"
+        canonical="https://naver-map.vercel.app/"
+      />
       <HomeHeader />
       <main
         style={{

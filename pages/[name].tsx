@@ -17,6 +17,7 @@ const StoreDetail: NextPage<Props> = ({ targetStoreInfo }) => {
 
   const { query } = router
   const { name } = query
+
   const { targetStore } = useCurrentStore()
 
   const copyUrl = () => {
