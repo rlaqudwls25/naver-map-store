@@ -45,10 +45,14 @@ export default Home
 
 export const getStaticProps = async () => {
   // const stores = (await import('../public/stores.json')).default
-  const { data } = await clientAxios.get('/api/stores')
+  // const { data } = await clientAxios.get('/api/stores')
+
+  const stores = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
+  ).then((response) => response.json())
 
   return {
-    props: { stores: data },
+    props: { stores },
     revalidate: 60 * 60,
   }
 }
