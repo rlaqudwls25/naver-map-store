@@ -44,18 +44,8 @@ const Home = ({ stores }: Props) => {
 export default Home
 
 export const getStaticProps = async () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
   const stores = (await import('../public/stores.json')).default
   // const { data } = await clientAxios.get('/api/stores')
-=======
-  // 나중에 next api routes로 불러오기로 리팩토링 예정
-  const stores = (await import('../public/stores.json')).default
->>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
-=======
-  // 나중에 next api routes로 불러오기로 리팩토링 예정
-  const stores = (await import('../public/stores.json')).default
->>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
 
   return {
     props: { stores },
