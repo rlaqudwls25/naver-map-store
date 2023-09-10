@@ -5,7 +5,6 @@ import useStores from '@/hooks/useStore'
 import HomeHeader from '@/components/home/HomeHeader'
 import DetailSection from '@/components/detail/DetailSection'
 import { NextSeo } from 'next-seo'
-import clientAxios from '../utils'
 
 interface Props {
   stores: StoreInfo[]
