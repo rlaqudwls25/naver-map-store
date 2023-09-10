@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://naver-map.vercel.app/
+
+# Sitemaps
+Sitemap: https://naver-map.vercel.app/sitemap.xml

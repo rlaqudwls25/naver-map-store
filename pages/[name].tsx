@@ -7,6 +7,7 @@ import { StoreInfo } from '@/types/store'
 import { useRouter } from 'next/router'
 import copy from 'copy-to-clipboard'
 import useCurrentStore from '@/hooks/useCurrentStore'
+import { NextSeo } from 'next-seo'
 
 interface Props {
   targetStoreInfo: StoreInfo
@@ -32,15 +33,22 @@ const StoreDetail: NextPage<Props> = ({ targetStoreInfo }) => {
   }
 
   return (
-    <div className={`${styles.detailContainer} ${styles.toggle}`}>
-      <DetailHeader
-        targetStore={targetStoreInfo}
-        toggle={true}
-        copyUrl={copyUrl}
-        onToggleArrowButton={goToMap}
+    <>
+      <NextSeo
+        title={`${targetStoreInfo.name} 상세 정보`}
+        defaultTitle="매장 상세 입니다."
+        canonical={`https://naver-map.vercel.app/${targetStoreInfo.name}`}
       />
-      <DetailContents targetStore={targetStoreInfo} toggle={true} />
-    </div>
+      <div className={`${styles.detailContainer} ${styles.toggle}`}>
+        <DetailHeader
+          targetStore={targetStoreInfo}
+          toggle={true}
+          copyUrl={copyUrl}
+          onToggleArrowButton={goToMap}
+        />
+        <DetailContents targetStore={targetStoreInfo} toggle={true} />
+      </div>
+    </>
   )
 }
 
