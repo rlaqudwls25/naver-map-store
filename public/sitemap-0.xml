@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <url><loc>https://naver-map.vercel.app</loc><lastmod>2023-09-10T16:54:47.937Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/feedback</loc><lastmod>2023-09-10T16:54:47.937Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/마굿간편한식당</loc><lastmod>2023-09-10T16:54:47.937Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
@@ -40,6 +41,8 @@
 <url><loc>https://naver-map.vercel.app/일진PC</loc><lastmod>2023-09-10T16:54:47.937Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/콘크리트 정글</loc><lastmod>2023-09-10T16:54:47.937Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 =======
+=======
+>>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
 <url><loc>https://naver-map.vercel.app</loc><lastmod>2023-09-08T11:21:44.165Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/feedback</loc><lastmod>2023-09-08T11:21:44.165Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/마굿간편한식당</loc><lastmod>2023-09-08T11:21:44.165Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
@@ -78,5 +81,8 @@
 <url><loc>https://naver-map.vercel.app/미육 송도타임스페이스점</loc><lastmod>2023-09-08T11:21:44.165Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/일진PC</loc><lastmod>2023-09-08T11:21:44.165Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://naver-map.vercel.app/콘크리트 정글</loc><lastmod>2023-09-08T11:21:44.165Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<<<<<<< HEAD
+>>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
+=======
 >>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
 </urlset>

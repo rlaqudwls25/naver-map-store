@@ -5,10 +5,7 @@ import useStores from '@/hooks/useStore'
 import HomeHeader from '@/components/home/HomeHeader'
 import DetailSection from '@/components/detail/DetailSection'
 import { NextSeo } from 'next-seo'
-<<<<<<< HEAD
 import clientAxios from '../utils'
-=======
->>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
 
 interface Props {
   stores: StoreInfo[]
@@ -48,8 +45,13 @@ export default Home
 
 export const getStaticProps = async () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
   const stores = (await import('../public/stores.json')).default
   // const { data } = await clientAxios.get('/api/stores')
+=======
+  // 나중에 next api routes로 불러오기로 리팩토링 예정
+  const stores = (await import('../public/stores.json')).default
+>>>>>>> parent of 9046d31 ([feat]: next api routes 적용)
 =======
   // 나중에 next api routes로 불러오기로 리팩토링 예정
   const stores = (await import('../public/stores.json')).default
