@@ -5,6 +5,7 @@ import useStores from '@/hooks/useStore'
 import HomeHeader from '@/components/home/HomeHeader'
 import DetailSection from '@/components/detail/DetailSection'
 import { NextSeo } from 'next-seo'
+import clientAxios from '../utils'
 
 interface Props {
   stores: StoreInfo[]
@@ -43,8 +44,8 @@ const Home = ({ stores }: Props) => {
 export default Home
 
 export const getStaticProps = async () => {
-  // 나중에 next api routes로 불러오기로 리팩토링 예정
   const stores = (await import('../public/stores.json')).default
+  // const { data } = await clientAxios.get('/api/stores')
 
   return {
     props: { stores },
