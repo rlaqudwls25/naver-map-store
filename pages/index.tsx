@@ -5,7 +5,7 @@ import useStores from '../hooks/useStore'
 import HomeHeader from '../components/home/HomeHeader'
 import DetailSection from '../components/detail/DetailSection'
 import { NextSeo } from 'next-seo'
-import { NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 
 interface Props {
   stores: StoreInfo[]
@@ -43,15 +43,25 @@ const Home: NextPage<Props> = ({ stores }: Props) => {
 
 export default Home
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   // const stores = (await import('../public/stores.json')).default
 
-  const stores = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
-  ).then((response) => response.json())
+  try {
+    const stores = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
+    ).then((response) => response.json())
 
-  return {
-    props: { stores },
-    revalidate: 60 * 60,
+    return {
+      props: { stores },
+      revalidate: 60 * 60,
+    }
+  } catch (error) {
+    console.error(error)
+
+    return {
+      props: {
+        data: null,
+      },
+    }
   }
 }
