@@ -1,4 +1,4 @@
-import { IDetailProps } from '@/types/store'
+import { IDetailProps } from '../../types/store'
 import Image from 'next/image'
 import React from 'react'
 import styles from '../../styles/detail.module.scss'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../styles/detail.module.scss'
-import { IDetailProps } from '@/types/store'
+import { IDetailProps } from '../../types/store'
 import { IoIosArrowUp } from 'react-icons/io'
 import { AiOutlineShareAlt } from 'react-icons/ai'
 

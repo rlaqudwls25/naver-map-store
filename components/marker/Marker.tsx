@@ -1,5 +1,5 @@
-import { ImageIcon, NaverMapType } from '@/types/map'
-import { Coordinates } from '@/types/store'
+import { ImageIcon, NaverMapType } from '../../types/map'
+import { Coordinates } from '../../types/store'
 import { useEffect } from 'react'
 
 interface IMarkerProps {

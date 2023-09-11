@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../../styles/detail.module.scss'
 import useSWR from 'swr'
-import { CURRENT_STORE_KEY } from '@/hooks/useCurrentStore'
+import { CURRENT_STORE_KEY } from '../../hooks/useCurrentStore'
 import DetailContents from './DetailContents'
 import DetailHeader from './DetailHeader'
 import copy from 'copy-to-clipboard'

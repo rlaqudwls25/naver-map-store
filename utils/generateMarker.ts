@@ -1,4 +1,4 @@
-import { ImageIcon } from '@/types/map'
+import { ImageIcon } from '../types/map'
 
 const MARKER_HEIGHT = 64
 const MARKER_WIDTH = 54

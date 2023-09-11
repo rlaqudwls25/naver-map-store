@@ -1,4 +1,4 @@
-import { StoreInfo } from '@/types/store'
+import { StoreInfo } from '../types/store'
 import { mutate } from 'swr'
 
 export const STORE_KEY = 'store_key'

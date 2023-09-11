@@ -1,12 +1,12 @@
-import DetailContents from '@/components/detail/DetailContents'
-import DetailHeader from '@/components/detail/DetailHeader'
+import DetailContents from '../components/detail/DetailContents'
+import DetailHeader from '../components/detail/DetailHeader'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import styles from '../styles/detail.module.scss'
-import { StoreInfo } from '@/types/store'
+import { StoreInfo } from '../types/store'
 import { useRouter } from 'next/router'
 import copy from 'copy-to-clipboard'
-import useCurrentStore from '@/hooks/useCurrentStore'
+import useCurrentStore from '../hooks/useCurrentStore'
 import { NextSeo } from 'next-seo'
 
 interface Props {

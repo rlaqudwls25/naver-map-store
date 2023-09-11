@@ -1,21 +1,22 @@
 import React, { Fragment, useEffect } from 'react'
-import MapSection from '@/components/map/MapSection'
-import { StoreInfo } from '@/types/store'
-import useStores from '@/hooks/useStore'
-import HomeHeader from '@/components/home/HomeHeader'
-import DetailSection from '@/components/detail/DetailSection'
+import MapSection from '../components/map/MapSection'
+import { StoreInfo } from '../types/store'
+import useStores from '../hooks/useStore'
+import HomeHeader from '../components/home/HomeHeader'
+import DetailSection from '../components/detail/DetailSection'
 import { NextSeo } from 'next-seo'
+import { NextPage } from 'next'
 
 interface Props {
   stores: StoreInfo[]
 }
 
-const Home = ({ stores }: Props) => {
+const Home: NextPage<Props> = ({ stores }: Props) => {
   const { initializeStores } = useStores()
 
   useEffect(() => {
     initializeStores(stores)
-  }, [stores])
+  }, [initializeStores, stores])
 
   return (
     <Fragment>

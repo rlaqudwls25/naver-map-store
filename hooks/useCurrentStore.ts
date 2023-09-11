@@ -1,5 +1,5 @@
-import { NaverMapType } from '@/types/map'
-import { StoreInfo } from '@/types/store'
+import { NaverMapType } from '../types/map'
+import { StoreInfo } from '../types/store'
 import { mutate } from 'swr'
 
 export const CURRENT_STORE_KEY = 'cuurrent_store_key'

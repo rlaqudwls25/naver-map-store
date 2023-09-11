@@ -1,5 +1,5 @@
-import { NaverMapType } from '@/types/map'
-import { Coordinates } from '@/types/store'
+import { NaverMapType } from '../types/map'
+import { Coordinates } from '../types/store'
 import { mutate } from 'swr'
 import useSWR from 'swr'
 
