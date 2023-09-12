@@ -6,6 +6,7 @@ import HomeHeader from '../components/home/HomeHeader'
 import DetailSection from '../components/detail/DetailSection'
 import { NextSeo } from 'next-seo'
 import { GetStaticProps, NextPage } from 'next'
+import clientAxios from '../utils/axios'
 
 interface Props {
   stores: StoreInfo[]
@@ -44,24 +45,10 @@ const Home: NextPage<Props> = ({ stores }: Props) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const stores = (await import('../public/stores.json')).default
+  const { data } = await clientAxios.get('/api/stores')
 
-  try {
-    const stores = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
-    ).then((response) => response.json())
-
-    return {
-      props: { stores },
-      revalidate: 60 * 60,
-    }
-  } catch (error) {
-    console.error(error)
-
-    return {
-      props: {
-        data: null,
-      },
-    }
+  return {
+    props: { stores: data },
+    revalidate: 60 * 60,
   }
 }
