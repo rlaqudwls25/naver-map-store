@@ -5,6 +5,7 @@ import styles from '../../styles/detail.module.scss'
 import { IoLocationOutline } from 'react-icons/io5'
 import { BsTelephone } from 'react-icons/bs'
 import Link from 'next/link'
+import { BiDetail } from 'react-icons/bi'
 
 const DetailContents = ({ targetStore, toggle }: IDetailProps) => {
   if (!targetStore) return null
@@ -54,6 +55,7 @@ const DetailContents = ({ targetStore, toggle }: IDetailProps) => {
                 target="_blank"
                 rel="noreferrer noopener"
               >
+                <BiDetail size={20} />
                 <span>네이버 상세 정보</span>
               </Link>
             </div>

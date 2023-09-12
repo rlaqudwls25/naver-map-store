@@ -25,6 +25,9 @@ const Home: NextPage<Props> = ({ stores }: Props) => {
         title="매장 지도"
         description="매장 지도 서비스입니다."
         canonical="https://naver-map.vercel.app/"
+        openGraph={{
+          url: 'https://naver-map.vercel.app/',
+        }}
       />
       <HomeHeader />
       <main

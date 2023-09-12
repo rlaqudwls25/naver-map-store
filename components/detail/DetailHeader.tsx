@@ -27,7 +27,7 @@ const DetailHeader = ({
       )}
       {targetStore && (
         <div className={styles.detailTitleBox}>
-          <p className={styles.detailTitle}>{targetStore.name}</p>
+          <h1 className={styles.detailTitle}>{targetStore.name}</h1>
           <button
             className={styles.detailShareButton}
             onClick={copyUrl}

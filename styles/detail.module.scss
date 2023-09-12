@@ -130,14 +130,23 @@ $section-padding-top: 8px;
       display: flex;
       align-items: center;
       margin: 4px 0px;
-
-      svg {
-        margin-right: 4px;
-      }
     }
 
     .detailInfoBox {
       margin: 4px 0px;
+
+      a {
+        display: flex;
+        align-items: center;
+
+        span {
+          color: rgb(0, 195, 81);
+        }
+      }
+    }
+
+    svg {
+      margin-right: 4px;
     }
   }
 

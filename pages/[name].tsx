@@ -38,6 +38,9 @@ const StoreDetail: NextPage<Props> = ({ targetStoreInfo }) => {
         title={`${targetStoreInfo.name} 상세 정보`}
         defaultTitle="매장 상세 입니다."
         canonical={`https://naver-map.vercel.app/${targetStoreInfo.name}`}
+        openGraph={{
+          url: `https://naver-map.vercel.app/${targetStoreInfo.name}`,
+        }}
       />
       <div className={`${styles.detailContainer} ${styles.toggle}`}>
         <DetailHeader
