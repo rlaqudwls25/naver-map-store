@@ -1,6 +1,6 @@
 export default {
   titleTemplate: '%s - 매장 서비스',
-  openGrapgh: {
+  openGraph: {
     type: 'website',
     site_name: '매장 서비스 이용하기',
     images: [
