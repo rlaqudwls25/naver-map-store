@@ -5,7 +5,7 @@ const SEO_OPTION = {
     site_name: '매장 서비스 이용하기',
     images: [
       {
-        url: 'https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png',
+        url: 'https://naver-map.vercel.app/images/gom.png',
       },
     ],
 
