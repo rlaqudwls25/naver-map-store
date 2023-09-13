@@ -1,4 +1,4 @@
-const SEO_OPTION = {
+export default {
   titleTemplate: '%s - 매장 서비스',
   openGrapgh: {
     type: 'website',
@@ -6,6 +6,9 @@ const SEO_OPTION = {
     images: [
       {
         url: 'https://naver-map.vercel.app/images/gom.png',
+        width: 400,
+        height: 400,
+        type: 'image/png',
       },
     ],
 
@@ -17,5 +20,3 @@ const SEO_OPTION = {
     ],
   },
 }
-
-export default SEO_OPTION
