@@ -5,6 +5,7 @@ import FeedbackBoard from './FeedbackBoard'
 import styles from '../../styles/feedback.module.scss'
 import { useInput } from '../../hooks/useInput'
 import FeedbackButton from './FeedbackButton'
+import ToastMessage from '../common/ToastMessage'
 
 const FeedbackSection = ({ initialFeedbackList }: IFeedbackList) => {
   const [feedbackList, setFeedbackList] = useState<Feedback[]>([
@@ -18,6 +19,7 @@ const FeedbackSection = ({ initialFeedbackList }: IFeedbackList) => {
 
   return (
     <>
+      <ToastMessage message="피드백이 등록되었습니다." />
       <div className={styles.feedbackBoardContainer}>
         <FeedbackBoard
           feedbackList={feedbackList}

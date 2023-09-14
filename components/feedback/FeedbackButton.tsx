@@ -3,6 +3,8 @@ import { Feedback } from '../../types/feedback'
 import styles from '../../styles/feedback.module.scss'
 import { createNewFeedback } from './variables'
 import { addFeedback } from '../../firebase/feedback'
+import { useSetRecoilState } from 'recoil'
+import { toastState } from '../../recoil/atom/common'
 
 interface IFeedbackButtonProps {
   newFeedbackText: string
@@ -15,6 +17,8 @@ const FeedbackButton = ({
   setNewFeedbackContent,
   setFeedbackList,
 }: IFeedbackButtonProps) => {
+  const setOpen = useSetRecoilState(toastState)
+
   const onCreateFeedback = (newFeedbackText: string) => {
     const newFeedback = createNewFeedback(newFeedbackText, new Date().getTime())
 
@@ -22,6 +26,7 @@ const FeedbackButton = ({
 
     addFeedback(newFeedback)
     setNewFeedbackContent('')
+    setOpen((prev) => !prev)
   }
 
   return (

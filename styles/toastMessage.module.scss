@@ -1,0 +1,27 @@
+.messageContainer {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .messageWrapper {
+    padding: 30px;
+    border-radius: 10px;
+    background: #74d785;
+    box-shadow: 0px 9px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes show {
+    from {
+      top: 10%;
+    }
+
+    to {
+      top: 15%;
+    }
+  }
+
+  &.show {
+    animation: show 1000ms infinite alternate;
+  }
+}
