@@ -1,8 +1,15 @@
 import { NextSeo } from 'next-seo'
 import Header from '../components/common/Header'
 import React, { Fragment } from 'react'
+import { getFeedbackList } from '../firebase/feedback'
+import FeedbackSection from '../components/feedback/FeedbackSection'
+import { Feedback } from '../types/feedback'
 
-const Feedback = () => {
+export interface IFeedbackList {
+  initialFeedbackList: Feedback[]
+}
+
+const Feedback = ({ initialFeedbackList }: IFeedbackList) => {
   return (
     <Fragment>
       <NextSeo
@@ -20,8 +27,18 @@ const Feedback = () => {
           touchAction: 'pinch-zoom',
         }}
       ></main>
+
+      <FeedbackSection initialFeedbackList={initialFeedbackList} />
     </Fragment>
   )
 }
 
 export default Feedback
+
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      initialFeedbackList: await getFeedbackList(),
+    },
+  }
+}
