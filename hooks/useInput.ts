@@ -6,7 +6,7 @@ export const useInput = (
   initialValue = '',
   maxLength?: number
 ): [
-  string,
+  value: string,
   onChange: (e: ChangeEventType) => void,
   setValue: React.Dispatch<React.SetStateAction<string>>
 ] => {
