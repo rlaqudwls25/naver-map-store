@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Feedback, { IFeedbackList } from '../../pages/feedback'
-import { createNewFeedback } from './variables'
 import FeedbackBoard from './FeedbackBoard'
 import styles from '../../styles/feedback.module.scss'
 import { useInput } from '../../hooks/useInput'
@@ -13,7 +12,7 @@ const FeedbackSection = ({ initialFeedbackList }: IFeedbackList) => {
   ])
 
   const [newFeedbackText, onChangeNewFeedbackContent, setNewFeedbackContent] =
-    useInput()
+    useInput('')
 
   console.log('feedbackList', feedbackList)
 
