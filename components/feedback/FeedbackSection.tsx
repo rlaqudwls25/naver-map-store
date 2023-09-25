@@ -14,8 +14,6 @@ const FeedbackSection = ({ initialFeedbackList }: IFeedbackList) => {
   const [newFeedbackText, onChangeNewFeedbackContent, setNewFeedbackContent] =
     useInput('')
 
-  console.log('feedbackList', feedbackList)
-
   return (
     <>
       <ToastMessage message="피드백이 등록되었습니다." />
