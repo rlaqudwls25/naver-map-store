@@ -12,6 +12,7 @@
 * React.js
 * Next.js
 * TypeScript
+* Sass
 * Recoil
 * SWR
 * Firebase Cloud Firestore
@@ -26,6 +27,7 @@
 * 피드백 작성
 * Next-seo를 통해 검색엔진 최적화
 * getStaticProps, getServerSideProps를 통해 Main, Feecback, detail 페이지 pre-rendering 적용
+* getStaticPath를 통해 각 매장에 대해 dynamic routing 적용
 
 <br />
 
