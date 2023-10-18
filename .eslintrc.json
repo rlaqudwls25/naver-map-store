@@ -1,3 +1,23 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  // 해당 파일이 프로젝트의 루트 디렉토리에서 찾아져야 한다.
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:jest-dom/recommended"
+  ],
+
+  // testing-library 플러그인을 사용하겠다고 ESLint에 알려준다.
+  "plugins": ["testing-library"],
+
+  // 특정 파일 또는 파일 패턴에 대해 다른 ESLint 규칙을 적용하겠다는 것을 나타낸다.
+  "overrides": [
+    {
+      "files": [
+        // "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
 }
