@@ -17,7 +17,7 @@ const DetailContents = ({ targetStore, toggle }: IDetailProps) => {
           <div key={image} className={styles.imageBox}>
             <Image
               src={image}
-              alt="매장 사진"
+              alt={`store ${image}`}
               fill
               sizes="160px"
               placeholder="blur"

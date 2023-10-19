@@ -27,8 +27,8 @@ const Markers = () => {
         return (
           <Marker
             map={mapInfo}
-            coordinates={store.coordinates}
             key={store.nid}
+            coordinates={store.coordinates}
             icon={generateStoreMarkerIcon(store.season, false)}
             onClick={() => targetStore(store)}
           />
