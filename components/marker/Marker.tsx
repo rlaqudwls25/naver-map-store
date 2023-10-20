@@ -10,6 +10,8 @@ interface IMarkerProps {
 }
 
 const Marker = ({ map, coordinates, icon, onClick }: IMarkerProps): null => {
+  console.log('icon', icon)
+
   useEffect(() => {
     let marker: naver.maps.Marker | null = null
 

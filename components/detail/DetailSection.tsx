@@ -15,10 +15,6 @@ const DetailSection = () => {
     setToggle((prev) => !prev)
   }
 
-  const copyUrl = () => {
-    copy(location.origin + '/' + targetStore.name)
-  }
-
   return (
     <div
       className={`${styles.detailContainer} ${
@@ -29,7 +25,7 @@ const DetailSection = () => {
         targetStore={targetStore}
         toggle={toggle}
         onToggleArrowButton={onToggleArrowButton}
-        copyUrl={copyUrl}
+        // copyUrl={copyUrl}
       />
       <DetailContents targetStore={targetStore} toggle={toggle} />
     </div>

@@ -67,12 +67,10 @@ export const targetStoreDummyData: IDetailProps = {
   },
   toggle: true,
   onToggleArrowButton: jest.fn(),
-  copyUrl: jest.fn(),
 }
 
 export const nonTargetStoreDummyData: any = {
   targetStore: false,
   toggle: false,
   onToggleArrowButton: jest.fn(),
-  copyUrl: jest.fn(),
 }

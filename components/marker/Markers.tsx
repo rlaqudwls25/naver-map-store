@@ -26,6 +26,7 @@ const Markers = () => {
       {storeList?.map((store) => {
         return (
           <Marker
+            data-testid="marker"
             map={mapInfo}
             key={store.nid}
             coordinates={store.coordinates}

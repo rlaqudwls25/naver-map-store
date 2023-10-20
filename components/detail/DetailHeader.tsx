@@ -3,13 +3,14 @@ import styles from '../../styles/detail.module.scss'
 import { IDetailProps } from '../../types/store'
 import { IoIosArrowUp } from 'react-icons/io'
 import { AiOutlineShareAlt } from 'react-icons/ai'
+import { copyUrl } from '../../utils/clipboardUtil'
 
 const DetailHeader = ({
   targetStore,
   toggle,
   onToggleArrowButton,
-  copyUrl,
-}: IDetailProps) => {
+}: // copyUrl,
+IDetailProps) => {
   return (
     <div className={styles.detailHeader}>
       <button
@@ -30,7 +31,7 @@ const DetailHeader = ({
           <h1 className={styles.detailTitle}>{targetStore.name}</h1>
           <button
             className={styles.detailShareButton}
-            onClick={copyUrl}
+            onClick={() => copyUrl(targetStore)}
             aria-label="매장 상세 URL 공유"
           >
             <AiOutlineShareAlt size={20} />
