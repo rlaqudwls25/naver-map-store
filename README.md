@@ -16,6 +16,7 @@
 * Recoil
 * SWR
 * Firebase Cloud Firestore
+* Jest / RTL
 
 <br />
 
@@ -31,4 +32,5 @@
 
 <br />
 
-
+## 4. 최근 업데이트
+* Detail page test 작성
