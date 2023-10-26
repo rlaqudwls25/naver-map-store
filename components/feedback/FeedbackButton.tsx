@@ -6,7 +6,7 @@ import { addFeedback } from '../../firebase/feedback'
 import { useSetRecoilState } from 'recoil'
 import { toastState } from '../../recoil/atom/common'
 
-interface IFeedbackButtonProps {
+export interface IFeedbackButtonProps {
   newFeedbackText: string
   setNewFeedbackContent: React.Dispatch<React.SetStateAction<string>>
   setFeedbackList: React.Dispatch<React.SetStateAction<Feedback[]>>
