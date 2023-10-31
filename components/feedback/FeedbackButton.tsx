@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Feedback } from '../../types/feedback'
 import styles from '../../styles/feedback.module.scss'
 import { createNewFeedback } from './variables'
@@ -19,15 +19,21 @@ const FeedbackButton = ({
 }: IFeedbackButtonProps) => {
   const setOpen = useSetRecoilState(toastState)
 
-  const onCreateFeedback = (newFeedbackText: string) => {
-    const newFeedback = createNewFeedback(newFeedbackText, new Date().getTime())
+  const onCreateFeedback = useCallback(
+    (newFeedbackText: string) => {
+      const newFeedback = createNewFeedback(
+        newFeedbackText,
+        new Date().getTime()
+      )
 
-    setFeedbackList((feedbackList) => [newFeedback, ...feedbackList])
+      setFeedbackList((feedbackList) => [newFeedback, ...feedbackList])
 
-    addFeedback(newFeedback)
-    setNewFeedbackContent('')
-    setOpen((prev) => !prev)
-  }
+      addFeedback(newFeedback)
+      setNewFeedbackContent('')
+      setOpen((prev) => !prev)
+    },
+    [setFeedbackList, setNewFeedbackContent, setOpen]
+  )
 
   return (
     <>

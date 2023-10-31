@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import Map from './Map'
 import Markers from '../marker/Markers'
 import useMap, { INITIAL_CENTER, INITIAL_ZOOM } from '../../hooks/useMap'
@@ -12,16 +12,23 @@ import { Coordinates } from '../../types/store'
 const MapSection = () => {
   const router = useRouter()
 
-  const queryUrl = new URLSearchParams(router.asPath.slice(1))
+  const queryUrl = useMemo(
+    () => new URLSearchParams(router.asPath.slice(1)),
+    [router.asPath]
+  )
 
-  const initialZoom = queryUrl.get('zoom')
-    ? Number(queryUrl.get('zoom'))
-    : INITIAL_ZOOM
+  const initialZoom = useMemo(
+    () => (queryUrl.get('zoom') ? Number(queryUrl.get('zoom')) : INITIAL_ZOOM),
+    [queryUrl]
+  )
 
-  const initialCenter: Coordinates =
-    queryUrl.get('lat') && queryUrl.get('lng')
-      ? [Number(queryUrl.get('lat')), Number(queryUrl.get('lng'))]
-      : INITIAL_CENTER
+  const initialCenter: Coordinates = useMemo(
+    () =>
+      queryUrl.get('lat') && queryUrl.get('lng')
+        ? [Number(queryUrl.get('lat')), Number(queryUrl.get('lng'))]
+        : INITIAL_CENTER,
+    [queryUrl]
+  )
 
   const { initialzeMap } = useMap()
 

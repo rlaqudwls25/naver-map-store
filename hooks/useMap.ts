@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { NaverMapType } from '../types/map'
 import { Coordinates } from '../types/store'
 import { mutate } from 'swr'
@@ -11,21 +12,21 @@ export const MAP_KEY = 'map_key'
 const useMap = () => {
   const { data: map } = useSWR(MAP_KEY)
 
-  const initialzeMap = (map: NaverMapType) => {
+  const initialzeMap = useCallback((map: NaverMapType) => {
     mutate(MAP_KEY, map)
-  }
+  }, [])
 
-  const resetMapOptions = () => {
+  const resetMapOptions = useCallback(() => {
     map.morph(new naver.maps.LatLng(...INITIAL_CENTER), INITIAL_ZOOM)
-  }
+  }, [map])
 
-  const getMapOptions = () => {
+  const getMapOptions = useCallback(() => {
     const mapCenter = map.getCenter()
     const center: Coordinates = [mapCenter.lat(), mapCenter.lng()]
     const zoom = map.getZoom()
 
     return { center, zoom }
-  }
+  }, [map])
 
   return {
     initialzeMap,
