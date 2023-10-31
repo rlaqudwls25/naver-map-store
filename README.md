@@ -34,3 +34,4 @@
 
 ## 4. 최근 업데이트
 * Detail page test 작성
+* Feedback page test 작업 중
